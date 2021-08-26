@@ -1,5 +1,6 @@
 package net.seamlessly.stepdefinitions;
 
+import com.google.errorprone.annotations.FormatMethod;
 import com.sun.java.swing.plaf.windows.WindowsBorders;
 import io.cucumber.java.ca.Cal;
 import io.cucumber.java.en.Given;
@@ -10,15 +11,21 @@ import net.seamlessly.utilities.BrowserUtils;
 import net.seamlessly.utilities.Driver;
 import org.junit.Assert;
 
+import java.text.DateFormat;
+import java.util.Calendar;
+
 public class CalendarStepDefs {
 
     @Given("the user display daily calendar view")
     public void the_user_display_daily_calendar_view() {
 
         new BasePage().navigateTo("Calendar");
-        new CalendarPage().threeDotIcon.click();
+        CalendarPage calendarPage=new CalendarPage();
+        calendarPage.threeDotIcon.click();
         BrowserUtils.waitFor(2);
-        new CalendarPage().dayButton.click();
+        calendarPage.dayButton.click();
+        System.out.println(new CalendarPage().datePickerButton.getText());
+
 
     }
 
@@ -26,7 +33,9 @@ public class CalendarStepDefs {
     public void the_user_can_display_weekly_calendar_view() {
 
         new CalendarPage().weekButton.click();
-        BrowserUtils.waitFor(2);
+        BrowserUtils.waitFor(3);
+        System.out.println(new CalendarPage().datePickerButton.getText());
+
 
     }
 
@@ -34,7 +43,8 @@ public class CalendarStepDefs {
     public void the_user_can_display_monthly_calendar_view() {
 
         new CalendarPage().monthButton.click();
-        BrowserUtils.waitFor(2);
+        BrowserUtils.waitFor(3);
+        System.out.println(new CalendarPage().datePickerButton.getText());
 
 
     }
@@ -43,7 +53,9 @@ public class CalendarStepDefs {
     public void the_user_User_can_create_a_new_event_under_the_Calendar_module_and_see_it_on_the_related_day_through_the_Monthly_Calendar_view() {
 
       new CalendarPage().newEventButton.click();
+      BrowserUtils.waitFor(3);
 
+      
 
     }
 
