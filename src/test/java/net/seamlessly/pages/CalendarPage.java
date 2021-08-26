@@ -4,6 +4,10 @@ import net.seamlessly.utilities.BrowserUtils;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 public class CalendarPage extends BasePage{
 
 
@@ -23,11 +27,12 @@ public class CalendarPage extends BasePage{
     @FindBy(xpath = "//button[@class='button primary new-event']")
     public WebElement newEventButton;
 
+    @FindBy(xpath = "//div[@class='datepicker-button-section']")
+    public WebElement datePickerButton;
 
 
 
-
-    }
+}
 
 
 
