@@ -20,6 +20,7 @@ public class ProfileSettStepDefs {
     public void the_user_should_see_following_labels(List <String> expectedLabels) {
         List<String> actualElementsText = BrowserUtils.getElementsText(new ProfileSettingsPage().personelInfoLabels);
 
+
         Assert.assertTrue(actualElementsText.containsAll(expectedLabels));
 
     }
