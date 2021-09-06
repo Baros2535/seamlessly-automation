@@ -58,6 +58,7 @@ public class ProfileSettStepDefs {
     public void the_user_should_see_the_private_is_selected() {
         String actualPrivacy = new ProfileSettingsPage().phoneNumberPrivacy.getAttribute("value");
         Assert.assertEquals("private",actualPrivacy);
+
     }
 
     @Then("the user should see the localtime in page")
