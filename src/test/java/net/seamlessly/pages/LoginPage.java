@@ -54,6 +54,16 @@ public class LoginPage {
 
     }
 
+    public void login(String username,String password){
+
+        //  userLoginBox.sendKeys(ConfigurationReader.get("username"));
+        userLoginBox.sendKeys(username);
+        userPasswordBox.sendKeys(password);
+        loginButton.click();
+
+
+    }
+
 
     public void login(String submitType){
 
